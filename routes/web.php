@@ -1,27 +1,23 @@
 <?php
 
+use App\Http\Livewire\Laporan;
+use App\Http\Livewire\UserHome;
+use App\Http\Livewire\Manajuser;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route Hooks - Do not delete//
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+	Route::view('realisasipembangunans', 'livewire.realisasipembangunans.index')->middleware('auth');
+	Route::view('penilaianmasyarakats', 'livewire.penilaianmasyarakats.index')->middleware('auth');
+	Route::view('penilaians', 'livewire.penilaians.index')->middleware('auth');
+	Route::view('kategoripenilaians', 'livewire.kategoripenilaians.index')->middleware('auth');
+	Route::view('pembangunans', 'livewire.pembangunans.index')->middleware('auth');
+	Route::view('jenispembangunans', 'livewire.jenispembangunans.index')->middleware('auth');
+	Route::view('jenis-pembangunans', 'livewire.jenis-pembangunans.index')->middleware('auth');
+	Route::view('masyarakats', 'livewire.masyarakats.index')->middleware('auth');
+    Route::get('/manajuser', Manajuser::class)->middleware('auth');
+    Route::get('/', UserHome::class);
+    Route::get('/laporan', Laporan::class)->middleware('auth');

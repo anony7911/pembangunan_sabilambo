@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Makassar',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,20 +83,20 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
     |--------------------------------------------------------------------------
     |
-    | The fallback locale determines the locale to use when the current one
+    | The fallback locale determines the locale to use whid the current one
     | is not available. You may change the value to correspond to any of
     | the language folders that are provided through your application.
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'id_ID',
 
     /*
     |--------------------------------------------------------------------------
